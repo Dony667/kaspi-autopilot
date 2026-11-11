@@ -23,6 +23,6 @@ OFFERS = [
             {"store_id": "30469666_PP1", "available": True, "stock": 1},
             {"store_id": "30469666_sklad2", "available": True, "stock": 1},
         ],
-        "city_prices": {"750000000": 50000},
+        "city_prices": {"750000000": 47500},
     },
 ]
