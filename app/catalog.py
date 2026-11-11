@@ -18,7 +18,7 @@ OFFERS = [
     {
         "sku": "171671908_827927985",
         "model": "Noname магнит-сувенир Магнитный музыкальный бокс Michael Jackson 1 шт",
-        "brand": "Noname",
+        "brand": "noname",
         "availabilities": [
             {"store_id": "30469666_PP1", "available": True, "stock": 1},
             {"store_id": "30469666_sklad2", "available": True, "stock": 1},
