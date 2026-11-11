@@ -1,9 +1,10 @@
-import os
 from fastapi import FastAPI
 from fastapi.responses import Response
 
+from app.catalog import MERCHANT_ID, OFFERS
+from app.xml_builder import build_price_xml
+
 app = FastAPI()
-PRICE_FILE = "/data/price.xml"
 
 
 @app.get("/")
@@ -13,7 +14,6 @@ def health():
 
 @app.get("/price.xml")
 def price_xml():
-    if not os.path.exists(PRICE_FILE):
-        return Response("не готов", status_code=404)
-    with open(PRICE_FILE, "rb") as f:
-        return Response(f.read(), media_type="application/xml")
+    # Файл собирается заново при каждом запросе Kaspi из app/catalog.py
+    xml = build_price_xml(MERCHANT_ID, OFFERS)
+    return Response(xml, media_type="application/xml")
